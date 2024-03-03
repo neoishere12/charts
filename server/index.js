@@ -14,7 +14,10 @@ app.use((req, res, next) => {
     next();
   });
 
-mongoose.connect("mongodb://localhost:27017/test") 
+  mongoose.connect("mongodb+srv://singhmanhasnitin:PlcQduylOyRvhWd1@cluster0.lysu0pn.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  });
 
 app.get('/getUsers',(_req,res) =>{
     UserModel.find()
